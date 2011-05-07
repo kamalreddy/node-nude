@@ -40,7 +40,8 @@ console.log('going to scan image');
 			message = [imageData, this.canvas.width, this.canvas.height];
 			myWorker.postMessage(message);
 			myWorker.onmessage = function(event){
-				callback(event.data);
+			  callback(event.data);
+                          myWorker.terminate();
 			}
 		};
 		// colorizeRegions function is for testdevelopment only
