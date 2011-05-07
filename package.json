@@ -5,6 +5,9 @@
   "homepage" : "http://goddamnbugs.com/",
   "author" : "Steve <steve@goddamnbugs.com> (http://goddamnbugs.com/)",
   "engines": { "node": ">= 0.4.7" },
+  "directories": {
+    "lib": "./lib/node-nude"
+  },
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/goddamnbugs/node-nude.git"

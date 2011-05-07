@@ -14,6 +14,7 @@ node tests/test.nude.js (ANNNNND wait a long time...it's on my list of things to
 Giants With Sore Shoulders
 Peter Griess' node-webworker (https://github.com/pgriess/node-webworker)
 LearnBoost's node-canvas (https://github.com/LearnBoost/node-canvas)
+
 Contact
 I'd very much like to thank Patrick for his original implementation.
 Steve

@@ -5,7 +5,7 @@
 var Canvas = require('canvas')
   , Image = Canvas.Image
   , fs = require('fs')
-  , nude = new (require('../node-nude')).nude();
+  , nude = new (require('../lib/node-nude')).nude();
 
 var img = new Image
   , start = new Date;
@@ -15,8 +15,8 @@ img.onerror = function(err){
 };
 
 img.onload = function(){
-  var width = img.width / 2
-    , height = img.height / 2
+  var width = img.width
+    , height = img.height
     , canvas = new Canvas(width, height)
     , ctx = canvas.getContext('2d');
   console.log(img);
