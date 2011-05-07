@@ -1,44 +1,35 @@
-window.onload = function(){
+/**
+ * test.nude.js
+ */
 
+var Canvas = require('canvas')
+  , Image = Canvas.Image
+  , fs = require('fs')
+  , nude = new (require('../node-nude')).nude();
 
-	var images = [
-					{"id":"testImage", "expected":false}, {"id":"testImage2", "expected":false}, {"id":"testImage3", "expected":false},
-					{"id":"testImage4", "expected":true}
-				];
-	
-	var matches = [];
-	var startTime = new Date().getTime();
-	
-	
-	(function testImage(i){
-	
-		var image = images[i];
-		
-		nude.load(image.id);
-		nude.scan(function(result){
-			if(result == image.expected){
-				matches.push(image);
-			}
-			if(i != images.length-1){
-					testImage(i+1);
-			}else{
-					var endTime = new Date().getTime();
-					console.log("Test complete:");
-					console.log("Test duration: "+(endTime-startTime)+"ms");
-					console.log("Checked "+images.length + " images for nudity.");
-					console.log(matches.length + " / "+ images.length + " images returned the expected result");
-					if(matches.length != images.length){
-						console.log("Detection algorithm checked successfully for nudity at the following images: ");
-						console.log(matches);
-					}
-			}
-		});
-	
-	})(0);
-	
+var img = new Image
+  , start = new Date;
 
-	
-	
+img.onerror = function(err){
+  throw err;
+};
 
+img.onload = function(){
+  var width = img.width / 2
+    , height = img.height / 2
+    , canvas = new Canvas(width, height)
+    , ctx = canvas.getContext('2d');
+  console.log(img);
+  ctx.drawImage(img, 0, 0, width, height);
+  nude.init(canvas);
+  nude.load(img);
+  nude.scan(function(result) {
+    if (result) {
+      console.log(img.src + " : Nude!!");
+    } else {
+      console.log(img.src + " : No nude!!");
+    }
+  });
+};
 
-}
+img.src = __dirname + '/images/3.jpg';

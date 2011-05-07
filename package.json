@@ -1,0 +1,17 @@
+{
+  "name": "node-nude",
+  "description": "node-nude adapts Patrick Wied's nude.js library for server-side nudity scanning.",
+  "version": "0.0.2",
+  "homepage" : "http://goddamnbugs.com/",
+  "author" : "Steve <steve@goddamnbugs.com> (http://goddamnbugs.com/)",
+  "engines": { "node": ">= 0.4.7" },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/goddamnbugs/node-nude.git"
+  },
+  "licenses" :
+  [ { "type" : "MIT"
+    , "url" : "http://github.com/goddamnbugs/node-nude/raw/master/LICENSE-MIT"
+    }
+  ]
+}

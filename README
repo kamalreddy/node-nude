@@ -1,19 +1,21 @@
 Visit the project page:
-http://www.patrick-wied.at/static/nudejs/
+http://github.com/goddamnbugs/node-nude
 
 About
-nude.js is a JavaScript implementation of a nudity scanner based on approaches from research papers. HTMLCanvas makes it possible to analyse image data and afterwards decide whether it should be displayed or not. The detection algorithm runs at the client, therefore it's possible (with user interaction) to display the image even if it's identified as nude (false positive)
-The real world usage for client side nudity detection could be in webproxies with child security filters, and maybe even more (e.g. on social media plattforms)
-nude.js is Open Source. Contributions are very welcome, the goal is to build a reliable client-side nudity scanner.
-
-The algorithm is mostly based on the following paper:
-http://www.math.admu.edu.ph/~raf/pcsc05/proceedings/AI4.pdf
+node-nude is a node.js adaptation of Patrick Wied's nude.js implementation (http://github.com/pa7/node.js). The initial goal is to seperate the dependance on the DOM by leveraging node-canvas directly which would provide server-side nudity scanning.
 
 Demo
-Test the nudity detection script on several predefined images, I didn't have enough time to build a nice demo with flickr image support but feel free to test some of your images too. nude.js is currently supported in IE9(excanvas), FF 3.6+, Chrome, Safari and Opera. For really fast results try Chrome.
+The test images from nude.js have been included in order to show the same detection results between node-nude and nude.js
+apt-get install libcairo2-dev libjpeg-dev
+npm install canvas
+npm install webworker
+node tests/test.nude.js (ANNNNND wait a long time...it's on my list of things to do....)
 
+Giants With Sore Shoulders
+Peter Griess' node-webworker (https://github.com/pgriess/node-webworker)
+LearnBoost's node-canvas (https://github.com/LearnBoost/node-canvas)
 Contact
-If you have any questions about the project, don't hesitate to contact me:
-Patrick Wied
-http://www.patrick-wied.at
-contact@patrick-wied.at
+I'd very much like to thank Patrick for his original implementation.
+Steve
+http://goddamnbugs.com/
+steve@goddamnbugs.com

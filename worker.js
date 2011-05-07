@@ -40,19 +40,19 @@ var addMerge = function(from, to){
 	toIndex = -1;
 	
 	
-	while(len--){
+	for(var i = 0; i < len; i++){
 	
-		var region = mergeRegions[len],
+		var region = mergeRegions[i],
 		rlen = region.length;
 		
-		while(rlen--){
+		for(var o = 0; o < rlen; o++){
 		
-			if(region[rlen] == from){
-				fromIndex = len;
+			if(region[o] == from){
+				fromIndex = i;
 			}
 			
-			if(region[rlen] == to){
-				toIndex = len;
+			if(region[o] == to){
+				toIndex = i;
 			}
 									
 		}
@@ -152,17 +152,17 @@ detRegions = [];
 
 
 // merging detected regions 
-while(length--){
+for(var i = 0; i < length; i++){
 	
-	var region = mergeRegions[length],
+	var region = mergeRegions[i],
 	rlen = region.length;
 
-	if(!detRegions[length])
-		detRegions[length] = [];
+	if(!detRegions[i])
+		detRegions[i] = [];
 
-	while(rlen--){
-		var index = region[rlen];
-		detRegions[length] = detRegions[length].concat(detectedRegions[index]);
+	for(var o = 0; o < rlen; o++){
+		var index = region[o];
+		detRegions[i] = detRegions[i].concat(detectedRegions[index]);
 		detectedRegions[index] = [];
 	}
 
@@ -356,3 +356,4 @@ function toNormalizedRgb(r, g, b){
 	var sum = r+g+b;
 	return [(r/sum), (g/sum), (b/sum)];
 };
+
