@@ -7,7 +7,7 @@ node-nude is a node.js adaptation of Patrick Wied's nude.js implementation (http
 Demo
 The test images from nude.js have been included in order to show the same detection results between node-nude and nude.js
 $sudo apt-get update
-$sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+$sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++ libjpeg-dev
 $npm install canvas
 npm install
 node tests/test.nude.js (ANNNNND wait a long time...it's on my list of things to do....)
